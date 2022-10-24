@@ -85,7 +85,7 @@ static int device_open(struct inode *inode, struct file *file)
     if (atomic_cmpxchg(&already_open, CDEV_NOT_USED, CDEV_EXCLUSIVE_OPEN))
         return -EBUSY;
 
-    sprintf(msg, "I already told you %d times Hello world!\n", counter++);
+    sprintf(msg, "I already told you %d times Hello Hou!\n", counter++);
     try_module_get(THIS_MODULE);
 
     return SUCCESS;
@@ -109,9 +109,9 @@ static int device_release(struct inode *inode, struct file *file)
  * read from it.
  */
 static ssize_t device_read(struct file *filp, /* see include/linux/fs.h */
-char __user *buffer, /* buffer to fill with data */
-size_t length, /* length of the buffer */
-loff_t *offset)
+    char __user *buffer, /* buffer to fill with data */
+    size_t length, /* length of the buffer */
+    loff_t *offset)
 {
 /* Number of bytes actually written to the buffer */
     int bytes_read = 0;

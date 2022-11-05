@@ -1,4 +1,4 @@
-obj-m += ioct1.o
+obj-m += chardev2.o
 
 PWD := $(CURDIR)
 

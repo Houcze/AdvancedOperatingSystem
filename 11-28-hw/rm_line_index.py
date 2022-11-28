@@ -1,4 +1,4 @@
-with open('vinput.c') as f:
+with open('vkbd.c') as f:
     src = f.read()
 
 src = src.split('\n')
@@ -14,7 +14,7 @@ for line in newsrc:
     s += line
     s += '\n'
 
-with open('vinput2.c', 'w') as f:
+with open('vkbd2.c', 'w') as f:
     f.write(s)
 
     

@@ -283,7 +283,7 @@ fail:
 /* This macro generates class_attr_export structure and export_store() */
 static CLASS_ATTR_WO(export);
 
-static ssize_t unexport_store(struct class *class, struct class_attribute,→ *attr, const char *buf, size_t len)
+static ssize_t unexport_store(struct class *class, struct class_attribute *attr, const char *buf, size_t len)
 {
     int err;
     unsigned long id;

@@ -1,9 +1,11 @@
-obj-m += vinput.o
+KDIR ?= /lib/modules/$(shell uname -r)/build
+obj-m	:= vinput.o vkbd.o
 
-PWD := $(CURDIR)
+.PHONY: all
+all: kmod
 
-all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+kmod:
+	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	$(MAKE) -C $(KDIR) M=$(PWD) clean
